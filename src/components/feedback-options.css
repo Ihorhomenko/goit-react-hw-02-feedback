@@ -1,0 +1,16 @@
+.btn {
+
+    width: 100px;
+    outline: none;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    transition: all 250ms linear;
+}
+
+.btn:hover{
+    background-color: aqua;
+}
+.btn:not(:last-child) {
+    margin-right: 10px;
+}

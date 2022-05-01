@@ -56,10 +56,12 @@ class App extends Component {
             bad
           </button>
         </div> */}
+        <div className='btns'>
         <FeedbackOptions
           options={['good', 'neutral', 'bad']}
           onLeaveFeedback={this.handleBtn}
         />
+        </div>
         <Statistics
           good={good}
           neutral={neutral}
