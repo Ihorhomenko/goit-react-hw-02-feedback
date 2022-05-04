@@ -1,5 +1,6 @@
 import React from 'react';
 import './feedback-options.css'
+import PropTypes from 'prop-types'
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(el => (
@@ -9,4 +10,10 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   ));
 };
 
+FeedbackOptions.propTypes = {
+  options: PropTypes.array,
+  onLeaveFeedback: PropTypes.func,
+}
+
 export default FeedbackOptions;
+

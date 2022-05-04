@@ -1,5 +1,4 @@
 .btn {
-
     width: 100px;
     outline: none;
     padding: 5px;
@@ -13,4 +12,11 @@
 }
 .btn:not(:last-child) {
     margin-right: 10px;
+}
+
+section {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 15px;
+    text-align: center;
 }

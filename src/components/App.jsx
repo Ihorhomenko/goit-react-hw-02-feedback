@@ -10,18 +10,21 @@ class App extends Component {
   };
 
   handleBtn = e => {
-    console.log(e.target.textContent);
+    
     if (e.target.textContent === 'good') {
+      console.log(this.state.good)
       this.setState(prevState => ({
         good: prevState.good + 1,
       }));
     }
     if (e.target.textContent === 'neutral') {
+      console.log(this.state.neutral)
       this.setState(prevState => ({
         neutral: prevState.neutral + 1,
       }));
     }
     if (e.target.textContent === 'bad') {
+      console.log(this.state.bad)
       this.setState(prevState => ({
         bad: prevState.bad + 1,
       }));

@@ -1,0 +1,13 @@
+.title {
+    font-style: italic;
+    text-transform: uppercase;
+}
+.state {
+
+    text-transform: uppercase;
+}
+.state-number {
+    font-style: italic;
+    font-size: large;
+    color: rgb(3, 171, 34);
+}
