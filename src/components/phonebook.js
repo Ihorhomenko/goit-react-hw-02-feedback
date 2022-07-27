@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+import { nanoid } from 'nanoid'
 
 class PhoneRegBook extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
     const name = form.elements.name.value;
-    // const number = form.elements.number.value;
-    console.log(name);
-    // this.props.setState({ name: [{ name }] });
+    const number = form.elements.number.value;
+    this.props.onSubmit({id: nanoid(), name, number})
     form.reset();
   };
-
+  
+  
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -25,13 +26,13 @@ class PhoneRegBook extends Component {
             required
           />
         </label>
-        {/* <label> Number
+        <label> Number
             <input type="tel"
                     name="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     required />
-        </label> */}
+        </label>
 
         <button type="submit">Add contacts</button>
       </form>

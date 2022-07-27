@@ -3,11 +3,14 @@ import Statistics from './statistics';
 import FeedbackOptions from './feedback-options';
 import PhoneRegBook from './phonebook';
 import Contacts from './contacts';
+import Filter from './filter'
 
 class App extends Component {
   state = {
     contacts: [],
+    filter: '',
     name: '',
+    number: ''
   };
   // state = {
   //   good: 0,
@@ -47,6 +50,14 @@ class App extends Component {
   //   }));
   // };
 
+  handleSubmitForm = data => {
+    this.setState({contacts: [...this.state.contacts, data]})
+  }
+
+  handleChangeFilter = value => {
+    this.setState({filter: value})
+  }
+
   render() {
     // const { good, neutral, bad } = this.state;
     // const total = good + neutral + bad;
@@ -54,9 +65,10 @@ class App extends Component {
     return (
       <div>
         <section>
-          <PhoneRegBook />
+          <PhoneRegBook onSubmit={this.handleSubmitForm}/>
         </section>
         <section>
+          <Filter onSubmit={this.handleChangeFilter}/>
           <h2>Contacts</h2>
           <Contacts contacts={this.state.contacts} />
         </section>
