@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import Statistics from './statistics';
 import FeedbackOptions from './feedback-options';
 import PhoneRegBook from './phonebook';
-import Contacts from './contacts'
+import Contacts from './contacts';
 
 class App extends Component {
   state = {
-    contacts: ['maks', 'andry', 'dima'],
-    name: ''
-  }
+    contacts: [],
+    name: '',
+  };
   // state = {
   //   good: 0,
   //   neutral: 0,
@@ -16,7 +16,7 @@ class App extends Component {
   // };
 
   // handleBtn = e => {
-    
+
   //   if (e.target.textContent === 'good') {
   //     console.log(this.state.good)
   //     this.setState(prevState => ({
@@ -53,10 +53,12 @@ class App extends Component {
     // const positiveFeedback = Math.trunc((good / (good + neutral + bad)) * 100);
     return (
       <div>
-        <section><PhoneRegBook/></section>
+        <section>
+          <PhoneRegBook />
+        </section>
         <section>
           <h2>Contacts</h2>
-          <Contacts contacts={this.state.contacts}/>
+          <Contacts contacts={this.state.contacts} />
         </section>
       </div>
       // <section>
