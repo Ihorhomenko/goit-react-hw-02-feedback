@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Filter extends Component {
     handleInputFilter = e => {
         const filterValue = e.currentTarget.value;
-        this.props.onSubmit(filterValue)
+        this.props.onFilter(filterValue)
     }
 
     render () {
