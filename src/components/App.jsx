@@ -3,6 +3,7 @@ import Statistics from './statistics';
 import FeedbackOptions from './feedback-options';
 import PhoneRegBook from './phonebook';
 import Contacts from './contacts';
+import Notification from './notification';
 import Filter from './filter';
 
 class App extends Component {
@@ -82,15 +83,22 @@ class App extends Component {
               onLeaveFeedback={this.handleBtn}
             />
           </div>
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positiveFeedback={good === 0 ? 0 : positiveFeedback}
-          />
+          {/* {} */}
+          <div>
+            {positiveFeedback > 0 ? (
+              <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={total}
+                positiveFeedback={good === 0 ? 0 : positiveFeedback}
+              />
+            ) : (
+              <Notification text="Here is no feedback" />
+            )}
+          </div>
         </section>
-        <section>
+        <section className="phone-reg-book">
           <PhoneRegBook onSubmit={this.handleSubmitForm} />
         </section>
         <section>

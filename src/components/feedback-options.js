@@ -1,10 +1,10 @@
 import React from 'react';
-import './feedback-options.css'
-import PropTypes from 'prop-types'
+import './feedback-options.css';
+import PropTypes from 'prop-types';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return options.map(el => (
-    <button className="btn" type="button" onClick={onLeaveFeedback}>
+    <button key={el} className="btn" type="button" onClick={onLeaveFeedback}>
       {el}
     </button>
   ));
@@ -13,7 +13,6 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 FeedbackOptions.propTypes = {
   options: PropTypes.array,
   onLeaveFeedback: PropTypes.func,
-}
+};
 
 export default FeedbackOptions;
-
