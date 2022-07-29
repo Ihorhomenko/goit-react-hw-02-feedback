@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Statistics from './statistics';
-import FeedbackOptions from './feedback-options';
-import PhoneRegBook from './phonebook';
-import Contacts from './contacts';
-import Notification from './notification';
-import Filter from './filter';
+import Statistics from './statistics/statistics';
+import FeedbackOptions from './feedback-options/feedback-options';
+import PhoneRegBook from './phonebook/phonebook';
+import Contacts from './contacts/contacts';
+import Notification from './notifications/notification';
+import Filter from './filter/filter';
 
 class App extends Component {
   state = {
@@ -47,13 +47,7 @@ class App extends Component {
   };
 
   handleSubmitForm = data => {
-    this.state.contacts.map(contact =>
-      contact.name !== data.name ? (
-        <alert>{data.name} is already in contacts</alert>
-      ) : (
-        this.setState({ contacts: [...this.state.contacts, data] })
-      )
-    );
+    this.setState({ contacts: [...this.state.contacts, data] })
   };
 
   handleChangeFilter = value => {
@@ -77,15 +71,15 @@ class App extends Component {
     return (
       <div>
         <section>
+          <h2>Please leave feedback</h2>
           <div className="btns">
             <FeedbackOptions
               options={['good', 'neutral', 'bad']}
               onLeaveFeedback={this.handleBtn}
             />
           </div>
-          {/* {} */}
           <div>
-            {positiveFeedback > 0 ? (
+            {good > 0 || neutral > 0 || bad > 0  ? (
               <Statistics
                 good={good}
                 neutral={neutral}
@@ -98,13 +92,16 @@ class App extends Component {
             )}
           </div>
         </section>
-        <section className="phone-reg-book">
+        <section className='phonebook'>
+        <h2>Phonebook</h2>
+        <div className="phone-reg-book">
           <PhoneRegBook onSubmit={this.handleSubmitForm} />
-        </section>
-        <section>
-          <Filter onFilter={this.handleChangeFilter} />
+        </div>
+        <div>
           <h2>Contacts</h2>
+          <Filter onFilter={this.handleChangeFilter} />
           <Contacts contacts={visibleContacts} onDelete={this.handleDelete} />
+        </div>
         </section>
       </div>
     );

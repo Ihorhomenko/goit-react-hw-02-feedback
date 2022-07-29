@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './filter.css'
 
 class Filter extends Component {
     handleInputFilter = e => {
@@ -8,9 +9,9 @@ class Filter extends Component {
 
     render () {
         return (
-            <label>
+            <label className='filter'>
                 Find contacts by name
-                <input onChange={this.handleInputFilter}
+                <input className='filter-input' onChange={this.handleInputFilter}
                     type="text"
                     name="name"
                     pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"/>

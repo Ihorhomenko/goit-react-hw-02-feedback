@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
-import './state.css'
+import './statistics.css'
 
 const Statistics = ({ good, neutral, bad, total, positiveFeedback }) => {
   return (
