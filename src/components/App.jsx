@@ -3,7 +3,6 @@ import Statistics from './statistics/statistics';
 import FeedbackOptions from './feedback-options/feedback-options';
 import Notification from './notification/notification';
 
-
 class App extends Component {
   state = {
     good: 0,
@@ -11,13 +10,11 @@ class App extends Component {
     bad: 0,
   };
 
-  handleClick = e => {
-    const name = e.target.textContent;
+  handleClick = name => {
     this.setState(prevState => ({
-    [name]: prevState[name] + 1,
+      [name]: prevState[name] + 1,
     }));
-  }
-
+  };
 
   render() {
     const { good, neutral, bad } = this.state;
@@ -35,7 +32,7 @@ class App extends Component {
             />
           </div>
           <div>
-            {good > 0 || neutral > 0 || bad > 0  ? (
+            {good > 0 || neutral > 0 || bad > 0 ? (
               <Statistics
                 good={good}
                 neutral={neutral}
